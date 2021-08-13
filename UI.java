@@ -22,16 +22,13 @@ import java.awt.FlowLayout;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import java.awt.CardLayout;
-//import net.miginfocom.swing.MigLayout;
 import javax.swing.JToggleButton;
 import java.awt.Component;
-
 import javax.swing.AbstractButton;
 import javax.swing.Box;
 import javax.swing.ButtonModel;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -44,7 +41,6 @@ import javax.swing.event.ChangeListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFileChooser;
-
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
