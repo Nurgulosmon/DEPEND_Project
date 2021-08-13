@@ -200,8 +200,7 @@ ItemListener itemListener = new ItemListener() {
                 // if selected print selected in console
                 if (state == ItemEvent.SELECTED) {
                     System.out.println("Selected");
-                    //new newFrame();
-                     makeNewFrame newFrame=new makeNewFrame();
+                    makeNewFrame newFrame=new makeNewFrame();
                      JFrame f2 = null;
                     newFrame.initialize(f2, "Basic_Stats", "reOrdertrecevalAllsReOrdered.txt");
                      newFrame.createFrame();
@@ -340,9 +339,6 @@ ItemListener itemListenerG = new ItemListener() {
 				jf.setFileFilter(filter);
 				int returnVal = jf.showOpenDialog(null);
 				if(returnVal == JFileChooser.APPROVE_OPTION) {
-				//System.out.println("You chose to open this file: " +
-				//jf.getSelectedFile().getName());
-				//System.out.println("getCurrentDirectory(): " +  jf.getCurrentDirectory());
 				setRunFileName(jf.getSelectedFile().getName());
 				setRunDir(jf.getSelectedFile().getAbsolutePath());
 				}
