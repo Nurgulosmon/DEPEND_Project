@@ -265,7 +265,7 @@ ItemListener itemListenerG = new ItemListener() {
                     System.out.println("Selected");
                     PlotData pd = new PlotData();
                     try {
-						PlotData.MakeGraphs();
+						pd.MakeGraphs();
 					} catch (Exception e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
