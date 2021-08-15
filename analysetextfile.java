@@ -17,21 +17,21 @@ public class analysetextfile {
 	static File dir = new File("C:\\Users\\DELL\\Documents\\CS Project\\for trec eval\\CLEFeHealth2016\\treceval_output");
 	static File dirOutputs = new File("C:\\Users\\DELL\\Documents\\CS Project\\for trec eval\\CLEFeHealth2016\\outputs");
 
- public static void main(String[] args) throws Exception
+ public void reorderAllFile() throws Exception
 {
 String fileData;
 String fileNameOutput;
 String[] fileList = dir.list();
-ArrayList<String> map_dataRequired = new ArrayList<String>();
+/*ArrayList<String> map_dataRequired = new ArrayList<String>();
 ArrayList<String> bpref_dataRequired = new ArrayList<String>();
 ArrayList<String> P_5_dataRequired = new ArrayList<String>();
 ArrayList<String> P_10_dataRequired = new ArrayList<String>();
-ArrayList<String> P_20_dataRequired = new ArrayList<String>();
+ArrayList<String> P_20_dataRequired = new ArrayList<String>();*/
 for(String str : fileList) {
 extractAllsfromTextFile(dir.toString() +"\\"+str);
 }
 reorderAllFile(dirOutputs.toString() + "\\" + "trecevalalls.txt");
-bpref_dataRequired=extractFileData(dirOutputs.toString() + "\\" + "trecevalNonalls.txt","map");
+/*bpref_dataRequired=extractFileData(dirOutputs.toString() + "\\" + "trecevalNonalls.txt","map");
 map_dataRequired=extractFileData(dirOutputs.toString() + "\\" + "trecevalNonalls.txt","map");
 P_5_dataRequired=extractFileData(dirOutputs.toString() + "\\" + "trecevalNonalls.txt","P_5");
 P_10_dataRequired=extractFileData(dirOutputs.toString() + "\\" + "trecevalNonalls.txt","P_10");
@@ -45,7 +45,7 @@ plotData(P_5_dataRequired, "P_5",pxy_5);
 plotXYline pxy_10=new plotXYline();
 plotData(P_10_dataRequired, "P_10",pxy_10);
 plotXYline pxy_20=new plotXYline();
-plotData(P_20_dataRequired, "P_20",pxy_20);
+plotData(P_20_dataRequired, "P_20",pxy_20);*/
 }
 
 public static void extractAllsfromTextFile(String fileName) {

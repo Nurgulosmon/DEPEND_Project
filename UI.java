@@ -195,7 +195,8 @@ ItemListener itemListener = new ItemListener() {
                 // if selected print selected in console
                 if (state == ItemEvent.SELECTED) {
                     System.out.println("Selected");
-                    makeNewFrame newFrame=new makeNewFrame();
+                    //new newFrame();
+                     makeNewFrame newFrame=new makeNewFrame();
                      JFrame f2 = null;
                     newFrame.initialize(f2, "Basic_Stats", "reOrdertrecevalAllsReOrdered.txt");
                      newFrame.createFrame();
@@ -305,11 +306,16 @@ ItemListener itemListenerG = new ItemListener() {
 	String qrelFile = QrelFileNamePath;
 	String runFile = RunFileNamePath;
 	jtreceval jtrc=new jtreceval();
-	
+	analysetextfile atf=new analysetextfile();
+
 	jtrc.initializenew(qrelFile, runFile);
 				try {
 					jtrc.dotreceval();
+					atf.reorderAllFile();
 				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
@@ -365,8 +371,6 @@ ItemListener itemListenerG = new ItemListener() {
 				j.setFileFilter(filter);
 				int returnVal = j.showOpenDialog(null);
 				if(returnVal == JFileChooser.APPROVE_OPTION) {
-				//System.out.println("You chose to open this file: " +
-				//j.getSelectedFile().getName());
 				setQrelFileName(j.getSelectedFile().getName());
 				setQrelDir(j.getSelectedFile().getAbsolutePath());
 				}

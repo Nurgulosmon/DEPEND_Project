@@ -14,7 +14,6 @@ import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
 public class PlotData {
-	//static File dir = new File("C:\\Users\\DELL\\Documents\\CS Project\\for trec eval\\CLEFeHealth2016\\treceval_output");
 	static File dirOutputs = new File("C:\\Users\\DELL\\Documents\\CS Project\\for trec eval\\CLEFeHealth2016\\outputs");
 
  public static void MakeGraphs() throws Exception
@@ -28,11 +27,12 @@ ArrayList<String> P_5_dataRequired = new ArrayList<String>();
 ArrayList<String> P_10_dataRequired = new ArrayList<String>();
 ArrayList<String> P_20_dataRequired = new ArrayList<String>();
 
-bpref_dataRequired=extractFileData(dirOutputs.toString() + "\\" + "trecevalNonalls.txt","map");
+bpref_dataRequired=extractFileData(dirOutputs.toString() + "\\" + "trecevalNonalls.txt","bpref");
 map_dataRequired=extractFileData(dirOutputs.toString() + "\\" + "trecevalNonalls.txt","map");
 P_5_dataRequired=extractFileData(dirOutputs.toString() + "\\" + "trecevalNonalls.txt","P_5");
 P_10_dataRequired=extractFileData(dirOutputs.toString() + "\\" + "trecevalNonalls.txt","P_10");
 P_20_dataRequired=extractFileData(dirOutputs.toString() + "\\" + "trecevalNonalls.txt","P_20");
+
 plotXYline bpref=new plotXYline();
 plotData(bpref_dataRequired, "bpref",bpref);
 plotXYline map=new plotXYline();
@@ -44,8 +44,6 @@ plotData(P_10_dataRequired, "P_10",pxy_10);
 plotXYline pxy_20=new plotXYline();
 plotData(P_20_dataRequired, "P_20",pxy_20);
 }
-
-
 
 private static ArrayList extractFileData(String fileName,String patternToFind) {
 StringBuilder contentBuilder = new StringBuilder();
