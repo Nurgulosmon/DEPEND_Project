@@ -22,30 +22,10 @@ public class analysetextfile {
 String fileData;
 String fileNameOutput;
 String[] fileList = dir.list();
-/*ArrayList<String> map_dataRequired = new ArrayList<String>();
-ArrayList<String> bpref_dataRequired = new ArrayList<String>();
-ArrayList<String> P_5_dataRequired = new ArrayList<String>();
-ArrayList<String> P_10_dataRequired = new ArrayList<String>();
-ArrayList<String> P_20_dataRequired = new ArrayList<String>();*/
 for(String str : fileList) {
 extractAllsfromTextFile(dir.toString() +"\\"+str);
 }
 reorderAllFile(dirOutputs.toString() + "\\" + "trecevalalls.txt");
-/*bpref_dataRequired=extractFileData(dirOutputs.toString() + "\\" + "trecevalNonalls.txt","map");
-map_dataRequired=extractFileData(dirOutputs.toString() + "\\" + "trecevalNonalls.txt","map");
-P_5_dataRequired=extractFileData(dirOutputs.toString() + "\\" + "trecevalNonalls.txt","P_5");
-P_10_dataRequired=extractFileData(dirOutputs.toString() + "\\" + "trecevalNonalls.txt","P_10");
-P_20_dataRequired=extractFileData(dirOutputs.toString() + "\\" + "trecevalNonalls.txt","P_20");
-plotXYline bpref=new plotXYline();
-plotData(bpref_dataRequired, "bpref",bpref);
-plotXYline map=new plotXYline();
-plotData(map_dataRequired, "map",map);
-plotXYline pxy_5=new plotXYline();
-plotData(P_5_dataRequired, "P_5",pxy_5);
-plotXYline pxy_10=new plotXYline();
-plotData(P_10_dataRequired, "P_10",pxy_10);
-plotXYline pxy_20=new plotXYline();
-plotData(P_20_dataRequired, "P_20",pxy_20);*/
 }
 
 public static void extractAllsfromTextFile(String fileName) {
@@ -57,15 +37,14 @@ readFileOneString(fileName);
  public static void readFileOneString(String fileName) {
 StringBuilder contentBuilder = new StringBuilder();
 String content=null;
-//System.out.println(Paths.get(fileName));
 
- String regex = "\\ball\\b";
+String regex = "\\ball\\b";
 String regexNeg = "^(?!.*all).*$";
 
- Pattern p = Pattern.compile(regex);
+Pattern p = Pattern.compile(regex);
 Pattern pNeg = Pattern.compile(regexNeg);
 
- ArrayList allEntries = new ArrayList();
+ArrayList allEntries = new ArrayList();
 ArrayList noNallEntries = new ArrayList();
 
 try (Stream<String> lines = Files.lines( Paths.get(fileName), StandardCharsets.UTF_8)) {
@@ -83,17 +62,17 @@ noNallEntries.add(line);
 
  );
 
- String AllfileNameOutput= dirOutputs.toString() + "\\" + "trecevalalls";
+String AllfileNameOutput= dirOutputs.toString() + "\\" + "trecevalalls";
 createFile(AllfileNameOutput, allEntries);
 String NonAllfileNameOutput= dirOutputs.toString() + "\\" + "trecevalNonalls";
 createFile(NonAllfileNameOutput, noNallEntries);
 
- } catch (IOException e) {
+} catch (IOException e) {
 e.printStackTrace();
 }
 }
 
- private static void reorderAllFile(String fileName) throws IOException {
+private static void reorderAllFile(String fileName) throws IOException {
 StringBuilder contentBuilder = new StringBuilder();
 String content=null;
 NavigableSet<String> allFile = new TreeSet<String>();
